@@ -13,4 +13,4 @@ data <- read.table("dataset.txt", header = TRUE)
 Database Source:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-Details about the generated data can be found at the file Codebook.md
+Details about the generated data can be found at [Codebook.md](https://github.com/renatoaquino/Getting-and-Cleaning-Data/blob/master/Codebook.md)
