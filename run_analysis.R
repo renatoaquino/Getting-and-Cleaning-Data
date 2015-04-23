@@ -9,7 +9,7 @@ mergeAndLabelDatasets <- function(){
   interestingColumns <- grepl("mean",columnLabels) | grepl("std",columnLabels)
   colClasses <- rep("NULL",ncol(columnLabels))
   colClasses[interestingColumns] <- "numeric"
-  colNames <- gsub("\\(|\\)",'',tolower(columnLabels[interestingColumns]))
+  colNames <- gsub("\\(|\\)|-",'',tolower(columnLabels[interestingColumns]))
   colWidths <- rep(16,ncol(columnLabels))
   
   #Clean as much as we can for now
@@ -47,7 +47,7 @@ mergeAndLabelDatasets <- function(){
   attach(dataset)
   aggr <- aggregate(dataset,by=list(GSubject=subject,GActivity=activity),FUN=mean)
   detach(dataset)
-  aggr$activityLabel <- activityLabels[aggr$activity]
+  aggr$activitylabel <- activityLabels[aggr$activity]
   return(subset(aggr, select = -c(GSubject,GActivity) ))
 }
 
